@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Shadows+Into+Light&display=swap');;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: 'Black Ops One', cursive;
+}
+div{
+  padding: 1em;
+  height: 70%;
+  width: 30%;
+  /* background-color: #2e25af; */
+  display: grid;
+  place-content: center;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+div > h1{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div > p{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+}
+div > button{
+  padding: 15px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #121212;
+  cursor: pointer;
+  background: #ffff;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 20em;
+  font-family: 'Shadows Into Light', cursive;
+}
