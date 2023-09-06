@@ -2,11 +2,13 @@
 const display = document.querySelector('.show');
 const button = document.querySelector('.btn');
 
-function getItems = fetch('https://catfact.ninja/fact')
-.then(response => response.json())
-  .then(result => {
-    button.addEventListener('click', () => {
-    display.textContent = result.fact
-  } )
-})
+const getItems = async () => {
+  const response = await fetch('https://catfact.ninja/fact');
+  const result = await response.json();
 
+  display.textContent = result.fact;
+};
+
+const handleClick = () => {
+  getItems();
+}
