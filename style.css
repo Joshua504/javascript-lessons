@@ -1,39 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Shadows+Into+Light&display=swap');;
+/* @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Shadows+Into+Light&display=swap');; */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Ubuntu:wght@500&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+/* -------------------------------- cat facts ------------------------------- */
+/* body{
   display: grid;
   place-items: center;
   height: 100vh;
   font-family: 'Black Ops One', cursive;
 }
-div{
+.main{
   padding: 1em;
   height: 70%;
   width: 30%;
-  /* background-color: #2e25af; */
   display: grid;
   place-content: center;
   border-radius: 15px;
   border: 2px solid black;
 }
-div > h1{
+.main > h1{
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
 }
-div > p{
+.main > p{
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
 }
-div > button{
+.main > button{
   padding: 15px 30px;
   font-size: 15px;
   font-weight: bold;
@@ -46,4 +47,53 @@ div > button{
   font-family: 'Shadows Into Light', cursive;
   width: 200px;
   margin: 0 auto;
+} */
+
+/* ----------------------------- college search ----------------------------- */
+/* ;
+font-family: 'Ubuntu', sans-serif; */
+body{
+  background-color: #ADD8E6;
+}
+nav{
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+nav > div > h1{
+  font-size: 2em;
+  font-family: 'Acme', sans-serif;
+  text-transform: capitalize;
+}
+.inpt{
+  display: flex;
+  gap: 5px;
+}
+nav > div > input{
+  width: 130%;
+  height: 50%;
+  padding: 10px 10px;
+  outline: none;
+  border: 2px solid #000;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+nav > div > button{
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background: #000;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 20em;
+  font-family: 'Shadows Into Light', cursive;
+  width: 150px;
 }
