@@ -50,8 +50,8 @@
 } */
 
 /* ----------------------------- college search ----------------------------- */
-/* ;
-font-family: 'Ubuntu', sans-serif; */
+
+
 body{
   background-color: #ADD8E6;
 }
@@ -66,8 +66,8 @@ nav{
 }
 nav > div > h1{
   font-size: 2em;
-  font-family: 'Acme', sans-serif;
   text-transform: capitalize;
+  font-family: 'Acme', sans-serif;
 }
 .inpt{
   display: flex;
@@ -96,4 +96,36 @@ nav > div > button{
   border-radius: 20em;
   font-family: 'Shadows Into Light', cursive;
   width: 150px;
+}
+main{
+  padding: 3em 1em;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+main > .content{
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  width: 49%;
+}
+main > .content > div > h3{
+  font-size: 1.2em;
+  font-family: 'Acme', sans-serif;
+  margin-bottom: 8px;
+}
+main > .content > div > h3 > span{
+  font-size: 1em;
+  font-weight: 200; 
+  font-family: 'Ubuntu', sans-serif;
+
+}
+main > .content > div > .trash{
+  font-size: 1.5em;
+  color: red;
+  cursor: pointer;
 }
