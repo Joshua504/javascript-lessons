@@ -15,13 +15,12 @@
 
 /* ----------------------------- college search ----------------------------- */
 
-const deletEl = document.querySelector('.trash')
+const deletEl = document.querySelectorAll('.trash')
 const bodyEl = document.querySelector('.cont-container')
-console.log('bodyEl: ', bodyEl);
-
+const inputEl = document.querySelector('.inpt')
 
 window.addEventListener('load', async function () {
-  await fetch('http://universities.hipolabs.com/search?country=United+States&limit=100')
+  await fetch('http://universities.hipolabs.com/search?country=United+States&limit=10')
     .then(response => response.json())
     .then(data => {
       data.forEach(school => {
@@ -29,9 +28,13 @@ window.addEventListener('load', async function () {
       <section class="content">
         <div>
           <h3>name - <span>${school.name}</span></h3>
-          <h3>website - <a href=""></a></h3>
-          <h3>domain - <span></span></h3>
-          <h3>country - <span></span></h3>
+          <h3>website -
+            <a href="${school.web_pages}"target="blank">
+              ${school.web_pages}
+            </a>
+          </h3>
+          <h3>domain - <span>${school.domains}</span></h3>
+          <h3>country - <span>${school.country}</span></h3>
         </div>
         <div>
           <ion-icon class="trash" name="trash-outline"></ion-icon>
@@ -39,8 +42,22 @@ window.addEventListener('load', async function () {
       </section>`
       });
     });
-  });
-
-function getAllSchool() {
+});
   
+function deleteData(element) {
+  // Add click event listener to element
+  element.addEventListener('click', () => {
+    // Get parent section 
+    const section = element.parentElement.parentElement;
+    // Fade out section
+    section.classList.add('fade-out');
+    // Remove section after animation finishes
+    section.addEventListener('animationend', () => {
+      section.remove();
+    });
+  });
+// Usage
+deletEl.forEach(btn => {
+  deleteData(btn);
+});
 }
