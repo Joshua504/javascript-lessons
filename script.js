@@ -77,23 +77,3 @@ function handleSearch() {
       </section>`
   });
 }
-
-// handleSearch();
-
-function deleteData(element) {
-  // Add click event listener to element
-  element.addEventListener('click', () => {
-    // Get parent section 
-    const section = element.parentElement.parentElement;
-    // Fade out section
-    section.classList.add('fade-out');
-    // Remove section after animation finishes
-    section.addEventListener('animationend', () => {
-      section.remove();
-    });
-  });
-  // Usage
-  deletEl.forEach(btn => {
-    deleteData(btn);
-  });
-}
