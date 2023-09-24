@@ -19,6 +19,7 @@ const deletEl = document.querySelectorAll('.trash')
 const bodyEl = document.querySelector('.cont-container')
 
 let fixedData = [];
+let updatedData = [];
 
 window.addEventListener('load', async function () {
   await fetch('http://universities.hipolabs.com/search?country=United+States&limit=50')
@@ -55,10 +56,10 @@ function handleSearch() {
   console.log('fixedData: ', fixedData);
   const inputEl = document.querySelector('.search')
   console.log('inputEl: ', inputEl.value);
-  let search = fixedData.filter((element) => element.name.includes(inputEl.value));
-  console.log('search: ', search);
+  updatedData = fixedData.filter((element) => element.name.includes(inputEl.value));
+  console.log('search: ', updatedData);
   bodyEl.innerHTML = '';
-  search.forEach(school => {
+  updatedData.forEach(school => {
     bodyEl.innerHTML += `
       <section class="content">
         <div>
@@ -79,17 +80,20 @@ function handleSearch() {
 }
 
 function deleteData(school) {
-  console.log('school: ', school);
-
   // Get the index of the clicked element
   const index = fixedData.findIndex(s => s.name === school);
-  console.log('index: ', index);
 
   // Remove the element from the array
-  // Pop school object from array
-  const updatedData = [...fixedData];
-  updatedData.pop(index);
-  
+  // Deep clone fixed Data array
+  updatedData = updatedData.length > 0 ? updatedData : fixedData.map(school => ({ ...school }));
+
+  updatedData = updatedData.slice(0, index).concat(updatedData.slice(index + 1));
+
+  //save to a fixed arrray for search
+  fixedData = []
+  updatedData.forEach(single => {
+    fixedData.push(single)
+  })
   // Re-render the HTML
   bodyEl.innerHTML = '';
   updatedData.forEach(school => {
@@ -113,3 +117,17 @@ function deleteData(school) {
   });
 
 }
+
+function handleReset() {
+  // Reset search filters and data
+  // Clear search input
+  document.querySelector('.search').value = '';
+
+  // Reset search array
+  updatedData = []; 
+
+  // Reload page
+  window.location.reload();
+
+}
+

@@ -123,6 +123,7 @@ main > .content > div > h3{
 }
 h3 > a{
   color: black;
+  text-transform: none;
 }
 main > .content > div > h3 > span{
   font-size: 1em;
